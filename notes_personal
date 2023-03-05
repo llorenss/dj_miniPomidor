@@ -1,15 +1,28 @@
 py -m venv VirEnv
 VirEnv\Scripts\Activate.ps1
 
-django-admin startproject books
-python manage.py startapp store
+django-admin startproject project
+python manage.py startapp orders
 python manage.py makemigrations
 python manage.py migrate
 python manage.py showmigrations
 python manage.py createsuperuser
+python manage.py runserver
+
+
 
 http://127.0.0.1:8000
 http://127.0.0.1:8000/admin/
 
 black --line-length=79 ./
 pip install -r requirements.txt
+
+
+
+Работа с данными из бд из кода (не из админ панели)
+
+python manage.py shell
+from orders.models import SalesOrder
+SalesOrder.objects.all()
+order = SalesOrder.objects.all()[0]
+order.amount
