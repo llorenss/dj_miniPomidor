@@ -1,3 +1,4 @@
+cd project
 py -m venv VirEnv
 VirEnv\Scripts\Activate.ps1
 
@@ -26,3 +27,18 @@ from orders.models import SalesOrder
 SalesOrder.objects.all()
 order = SalesOrder.objects.all()[0]
 order.amount
+
+order1, order2 = SalesOrder.objects.all()
+order1.user
+order2.user
+
+
+python manage.py startapp products
+
+python manage.py shell
+from orders.models import SalesOrder
+order = SalesOrder.objects.all()[1]
+order.products.all()
+order.products.all()[0].name
+
+https://getbootstrap.com/docs/5.0/getting-started/introduction/
