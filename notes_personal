@@ -42,3 +42,5 @@ order.products.all()
 order.products.all()[0].name
 
 https://getbootstrap.com/docs/5.0/getting-started/introduction/
+
+http://127.0.0.1:8000/api/orders/?format=json
